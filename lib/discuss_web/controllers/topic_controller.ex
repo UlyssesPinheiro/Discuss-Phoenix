@@ -11,8 +11,11 @@ defmodule DiscussWeb.TopicController do
     render conn, "new.html", changeset: changeset
   end
 
-  def create(_conn, params) do
-    # IO.inspect(params)
+  def create(conn, params) do
     %{"topic" => topic} = params
+
+    changeset = Topic.changeset(%Topic{}, topic)
+
+    Repo.insert(changeset)
   end
 end
