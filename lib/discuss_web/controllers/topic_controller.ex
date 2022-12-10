@@ -2,11 +2,15 @@ defmodule DiscussWeb.TopicController do
   use DiscussWeb, :controller
 
   alias Discuss.Topic
+  alias DiscussWeb.Router.Helpers, as: Routes
 
-  def new(conn, params) do
-    struct = %Topic{}
-    params = %{}
-    changeset = Topic.changeset(struct, params)
+  def index(conn, _params) do
+    topics = Repo.all(Topic)
+    render conn, "index.html", topics: topics
+  end
+
+  def new(conn, _params) do
+    changeset = Topic.changeset(%Topic{}, %{})
 
     render conn, "new.html", changeset: changeset
   end
@@ -16,6 +20,20 @@ defmodule DiscussWeb.TopicController do
 
     changeset = Topic.changeset(%Topic{}, topic)
 
-    Repo.insert(changeset)
+    case Repo.insert(changeset) do
+      {:ok, post} ->
+        conn
+        |> put_flash(:info, "Topic Created")
+        |> redirect(to: Routes.topic_path(conn, :index))
+      {:error, changeset} ->
+        render(conn, "new.html", changeset: changeset)
+    end
+  end
+
+  def edit(conn, %{"id" => topic_id}) do
+    topic = Repo.get(Topic, topic_id)
+    changeset = Topic.changeset(topic)
+
+    render conn, "edit.html", changeset: changeset, topic: topic
   end
 end
