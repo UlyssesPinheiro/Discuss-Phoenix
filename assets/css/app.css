@@ -5,6 +5,17 @@
   position: relative;
 }
 
+.nav-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.loginbutton {
+  align-self: flex-end;
+  justify-self: center;
+  margin: 0;
+}
+
 /* Alerts and form errors used by phx.new */
 .alert {
   padding: 15px;
