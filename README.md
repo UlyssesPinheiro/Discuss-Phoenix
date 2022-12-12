@@ -1,6 +1,8 @@
 # Discuss
 
 Create a PostgreSQL database usign the username and password.
+  username: "postgres",
+  password: "u5p#RkrN@!2SbEw!",
 
 To start your Phoenix server:
 
