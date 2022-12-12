@@ -1,6 +1,6 @@
 # Discuss
 
-Create a PostgreSQL database usign the username and password.
+Create a PostgreSQL database using the username and password.
 
 Username: "postgres"
 Password: "u5p#RkrN@!2SbEw!"
