@@ -1,14 +1,25 @@
 # Discuss
 
-Create a PostgreSQL database using the username and password.
+## Install and setup
+
+### Install PostgreSQL using the username and password.
 
 Username: "postgres"
 Password: "u5p#RkrN@!2SbEw!"
 
-To start your Phoenix server:
+### Inside PgAdmin (PostgreSQL) create the database "discuss_dev"
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.setup`
-  * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
+### Create a "prod.secret.exs" file iside discuss-phoenix/config folder.
+
+Inside of it, place YOUR github Oauth API key like this:
+
+GITHUB_CLIENT_ID: 'your-client-api'
+GITHUB_CLIENT_SECRET: 'your-client-secret'
+
+### To start your Phoenix server:
+
+- Install dependencies with `mix deps.get`
+- Create and migrate your database with `mix ecto.setup`
+- Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
