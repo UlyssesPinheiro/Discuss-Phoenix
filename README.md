@@ -9,17 +9,19 @@ Discuss is an app for posting topics and discussions. It has user sign in with a
 Username: "postgres"
 Password: "u5p#RkrN@!2SbEw!"
 
-### Inside PgAdmin (PostgreSQL) create the database "discuss_dev"
+### Inside PgAdmin (PostgreSQL)
+
+Create the database "discuss_dev"
 
 ### Create a "prod.secret.exs" file iside discuss-phoenix/config folder.
 
-Inside of it, place YOUR github Oauth API key like this:
+Inside of it, place YOUR github OAuth API key like this:
 
-use Mix.Config
+`use Mix.Config`
 
-config :discuss, :oauth,
-GITHUB_CLIENT_ID: System.put_env("GITHUB_CLIENT_ID", "your client id number"),
-GITHUB_CLIENT_SECRET: System.put_env("GITHUB_CLIENT_SECRET", "your client secret number")
+`config :discuss, :oauth,`
+`GITHUB_CLIENT_ID: System.put_env("GITHUB_CLIENT_ID", "your client id number"),`
+`GITHUB_CLIENT_SECRET: System.put_env("GITHUB_CLIENT_SECRET", "your client secret number")`
 
 ### To start your Phoenix server:
 
