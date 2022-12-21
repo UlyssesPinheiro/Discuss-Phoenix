@@ -66,6 +66,8 @@ config :ueberauth, Ueberauth.Strategy.Github.OAuth,
   # Create a "prod.secret.exs" file iside discuss-phoenix/config folder.
 
 # Inside of it, place YOUR github Oauth API key like this:
+# use Mix.Config
 
-# GITHUB_CLIENT_ID: 'your-client-api'
-# GITHUB_CLIENT_SECRET: 'your-client-secret'
+# config :discuss, :oauth,
+# GITHUB_CLIENT_ID: System.put_env("GITHUB_CLIENT_ID", "your client id number"),
+# GITHUB_CLIENT_SECRET: System.put_env("GITHUB_CLIENT_SECRET", "your client secret number")

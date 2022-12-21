@@ -13,8 +13,11 @@ Password: "u5p#RkrN@!2SbEw!"
 
 Inside of it, place YOUR github Oauth API key like this:
 
-GITHUB_CLIENT_ID: 'your-client-api'
-GITHUB_CLIENT_SECRET: 'your-client-secret'
+use Mix.Config
+
+config :discuss, :oauth,
+GITHUB_CLIENT_ID: System.put_env("GITHUB_CLIENT_ID", "your client id number"),
+GITHUB_CLIENT_SECRET: System.put_env("GITHUB_CLIENT_SECRET", "your client secret number")
 
 ### To start your Phoenix server:
 
