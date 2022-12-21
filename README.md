@@ -1,5 +1,7 @@
 # Discuss
 
+Discuss is an app for posting topics and discussions. It has user sign in with authentication (Github OAuth) and a database that connects users to topics they posted, they can create, read, update and delete their own post but not the post from other users.
+
 ## Install and setup
 
 ### Install PostgreSQL using the username and password.
