@@ -15,10 +15,12 @@ const createSocket = (topicId) => {
     .receive("error", (resp) => {
       console.log("Unable to join", resp);
     });
+
+  document.querySelector("button").addEventListener("click", () => {
+    const content = document.querySelector("textarea").value;
+    channel.push("comment:add", { content: content });
+  });
 };
-// document.querySelector(".ping-button").addEventListener("click", () => {
-//   channel.push("comment:hello", { hi: "there!" });
-// });
 export default socket;
 
 window.createSocket = createSocket;
